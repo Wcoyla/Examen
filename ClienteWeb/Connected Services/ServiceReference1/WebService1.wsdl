@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarCategoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarCustomers">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarShippers">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarShippersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarShippersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarShippers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AgregarShippersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AgregarShippersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarShippers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarShippersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarShippersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criterio" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Region" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarShippers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShipperID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarShippersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarShippersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarCustomersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarShippers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ShipperID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarShippersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EliminarShippersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="ListarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ListarCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarShippersSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarShippers" />
+  </wsdl:message>
+  <wsdl:message name="ListarShippersSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarShippersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCategories" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarCustomers" />
+  </wsdl:message>
+  <wsdl:message name="AgregarCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="AgregarShippersSoapIn">
+    <wsdl:part name="parameters" element="tns:AgregarShippers" />
+  </wsdl:message>
+  <wsdl:message name="AgregarShippersSoapOut">
+    <wsdl:part name="parameters" element="tns:AgregarShippersResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarShippersSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarShippers" />
+  </wsdl:message>
+  <wsdl:message name="BuscarShippersSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarShippersResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCustomers" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="BuscarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarShippersSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarShippers" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarShippersSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarShippersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarCategories" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarCustomers" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="EliminarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarShippersSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarShippers" />
+  </wsdl:message>
+  <wsdl:message name="EliminarShippersSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarShippersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="ListarCategoria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ListarCategories</wsdl:documentation>
+      <wsdl:input message="tns:ListarCategoriaSoapIn" />
+      <wsdl:output message="tns:ListarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ListarCustomers</wsdl:documentation>
+      <wsdl:input message="tns:ListarCustomersSoapIn" />
+      <wsdl:output message="tns:ListarCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarShippers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ListarShippers</wsdl:documentation>
+      <wsdl:input message="tns:ListarShippersSoapIn" />
+      <wsdl:output message="tns:ListarShippersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Categories</wsdl:documentation>
+      <wsdl:input message="tns:AgregarCategoriesSoapIn" />
+      <wsdl:output message="tns:AgregarCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Customers</wsdl:documentation>
+      <wsdl:input message="tns:AgregarCustomersSoapIn" />
+      <wsdl:output message="tns:AgregarCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarShippers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Agregar Shippers</wsdl:documentation>
+      <wsdl:input message="tns:AgregarShippersSoapIn" />
+      <wsdl:output message="tns:AgregarShippersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarShippers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Shippers</wsdl:documentation>
+      <wsdl:input message="tns:BuscarShippersSoapIn" />
+      <wsdl:output message="tns:BuscarShippersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Customers</wsdl:documentation>
+      <wsdl:input message="tns:BuscarCustomersSoapIn" />
+      <wsdl:output message="tns:BuscarCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCategoria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Buscar Categoria</wsdl:documentation>
+      <wsdl:input message="tns:BuscarCategoriaSoapIn" />
+      <wsdl:output message="tns:BuscarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Customers</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarCustomersSoapIn" />
+      <wsdl:output message="tns:ActualizarCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarShippers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Shippers</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarShippersSoapIn" />
+      <wsdl:output message="tns:ActualizarShippersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Actualizar Categories</wsdl:documentation>
+      <wsdl:input message="tns:ActualizarCategoriesSoapIn" />
+      <wsdl:output message="tns:ActualizarCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCustomers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Customers</wsdl:documentation>
+      <wsdl:input message="tns:EliminarCustomersSoapIn" />
+      <wsdl:output message="tns:EliminarCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCategoria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Categoria</wsdl:documentation>
+      <wsdl:input message="tns:EliminarCategoriaSoapIn" />
+      <wsdl:output message="tns:EliminarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarShippers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar Shippers</wsdl:documentation>
+      <wsdl:input message="tns:EliminarShippersSoapIn" />
+      <wsdl:output message="tns:EliminarShippersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarCategoria">
+      <soap:operation soapAction="http://tempuri.org/ListarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCustomers">
+      <soap:operation soapAction="http://tempuri.org/ListarCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarShippers">
+      <soap:operation soapAction="http://tempuri.org/ListarShippers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategories">
+      <soap:operation soapAction="http://tempuri.org/AgregarCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCustomers">
+      <soap:operation soapAction="http://tempuri.org/AgregarCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarShippers">
+      <soap:operation soapAction="http://tempuri.org/AgregarShippers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarShippers">
+      <soap:operation soapAction="http://tempuri.org/BuscarShippers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCustomers">
+      <soap:operation soapAction="http://tempuri.org/BuscarCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCategoria">
+      <soap:operation soapAction="http://tempuri.org/BuscarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCustomers">
+      <soap:operation soapAction="http://tempuri.org/ActualizarCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarShippers">
+      <soap:operation soapAction="http://tempuri.org/ActualizarShippers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCategories">
+      <soap:operation soapAction="http://tempuri.org/ActualizarCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCustomers">
+      <soap:operation soapAction="http://tempuri.org/EliminarCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCategoria">
+      <soap:operation soapAction="http://tempuri.org/EliminarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarShippers">
+      <soap:operation soapAction="http://tempuri.org/EliminarShippers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/ListarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCustomers">
+      <soap12:operation soapAction="http://tempuri.org/ListarCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarShippers">
+      <soap12:operation soapAction="http://tempuri.org/ListarShippers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCategories">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarCustomers">
+      <soap12:operation soapAction="http://tempuri.org/AgregarCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarShippers">
+      <soap12:operation soapAction="http://tempuri.org/AgregarShippers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarShippers">
+      <soap12:operation soapAction="http://tempuri.org/BuscarShippers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCustomers">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/BuscarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCustomers">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarShippers">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarShippers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCategories">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCustomers">
+      <soap12:operation soapAction="http://tempuri.org/EliminarCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/EliminarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarShippers">
+      <soap12:operation soapAction="http://tempuri.org/EliminarShippers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://dais-w-06.somee.com/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://dais-w-06.somee.com/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
